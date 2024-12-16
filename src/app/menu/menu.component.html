@@ -1,19 +1,24 @@
 
-  <nav class="navbar">
-    <div class="navbar-logo">
-      Rick & Morty
-    </div>
-    <div *ngIf="currentUser">
-        <img clas="imagen"[src]="currentUser.avatar"  class="navbar-profile-img">
-        <ul>Perfil de {{ currentUser.name }}</ul>
-      </div>
-      
-      
-    <ul class="navbar-links">
-      <li><a href="login.component.html">Cerrar Sesión</a></li>
-    </ul>
+<nav class="navbar">
+  <div class="navbar-logo">
+    Nudibranquios
+  </div>
+
+  <!-- Mostrar detalles del usuario si está autenticado -->
+  <div *ngIf="currentUser">
+    <img class="navbar-profile-img" [src]="currentUser.imagen" alt="Avatar">
+    <ul>Perfil de {{ currentUser.nombre }}</ul>
+  </div>
+
+  <!-- Enlaces de navegación -->
+  <ul class="navbar-links">
+    <li><a href="login.component.html">Cerrar Sesión</a></li>
+  </ul>
+</nav>
+
+    
   
  
     
-  </nav>
+ 
   

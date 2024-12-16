@@ -1,20 +1,19 @@
 
-<h1 mat-dialog-title>Detalles de {{ data.name }}</h1>
+<h1 mat-dialog-title>Detalles de {{ data.nombre }}</h1>
 <div mat-dialog-content>
-  <img [src]="data.image" alt="{{ data.name }}" class="img-fluid mb-3">
-  <p><strong>Especie:</strong> {{ data.species }}</p>
-  <p><strong>Estado:</strong> {{ data.status }}</p>
-  <p><strong>Género:</strong> {{ data.gender }}</p>
-  <p><strong>Origen:</strong> {{ data.origin?.name }}</p>
-  <p><strong>Tipo:</strong> {{ data.type }}</p>
-  <p><strong>Ubicacion:</strong> {{ data.loaction?.name }}</p>
-  
-  <p><strong>Creacion:</strong> {{ data.cretaed}}</p>
+  <!-- Imagen del nudi -->
+  <img [src]="data.imagen" alt="{{ data.nombre }}" class="img-fluid mb-3">
 
+  <!-- Datos del nudi -->
+  <p><strong>Nombre:</strong> {{ data.nombre }}</p>
+  <p><strong>Tamaño:</strong> {{ data.tamano }}</p>
+  <p><strong>Sociabilidad:</strong> {{ data.sociabilidad }}</p>
+  <p><strong>Dieta:</strong> {{ data.dieta }}</p>
+ 
 </div>
+
+<!-- Botón de cerrar -->
 <div mat-dialog-actions>
   <button mat-button mat-dialog-close class="botonCerrar">Cerrar</button>
 </div>
-
-
 

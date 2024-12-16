@@ -1,7 +1,7 @@
 <app-menu></app-menu>
 
 <div class="tablaContenedor">
-  <h2>Lista de personajes </h2>
+  <h2>Lista de Nudibranquios</h2>
   <app-buscador (searchTextChanged)="onSearchTextChanged($event)"></app-buscador>
 
   <table class="table">
@@ -10,24 +10,23 @@
         <th>ID</th>
         <th>Nombre</th>
         <th>Especie</th>
-        <th>Estado</th>
+        <th>Tamaño</th>
         <th>Fotografía</th>
-        
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of filteredCharacters | paginate: { itemsPerPage: 4, currentPage: p }">
-        <td>{{ user.id }}</td>
-        <td>{{ user.name }}</td>
-        <td>{{ user.species }}</td>
-        <td>{{user.status}}</td>
+      <tr *ngFor="let nudi of filteredNudis | paginate: { itemsPerPage: 4, currentPage: p }">
+        <td>{{ nudi.id }}</td>
+        <td>{{ nudi.nombre }}</td>
+        <td>{{ nudi.especie }}</td>
+        <td>{{ nudi.tamano }}</td>
         <td style="text-align: center">
-          <img [src]="user.image" alt="{{ user.name }}" width="150" height="140">
+          <img [src]="nudi.imagen" alt="{{ nudi.nombre }}" width="150" height="140">
           <div>
-            <button class="botonDetalles" (click)="openModal(user)">Ver detalles</button>
+            <button class="botonDetalles" (click)="openModal(nudi)">Ver detalles</button>
             <div>
-              <button class="bontonEditar" (click)="actualizarCharacter(user)">Editar</button>
-              <button class="botonEliminar" (click)="borrarCharacter(user.id)" >Eliminar</button>
+              <button class="bontonEditar" (click)="actualizarNudi(nudi)">Editar</button>
+              <button class="botonEliminar" (click)="borrarNudi(nudi.id)">Eliminar</button>
             </div>
           </div>
         </td>

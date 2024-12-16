@@ -1,10 +1,11 @@
 export interface User {
+  
     id: number;
+    nombre: string;
     email: string;
-    password: string;
-    name: string;
-    role: string;
-    avatar: string;
-    creationAt: string;  
-    updatedAt: string;   
+    contraseña: string;
+    edad: string;
+    imagen: string;
+   
+   
   }
