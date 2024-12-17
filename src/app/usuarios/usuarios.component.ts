@@ -12,6 +12,7 @@ export class UsuariosComponent implements OnInit {
   usuarios: any[] = [];
   filteredUsuarios: any[] = [];
   searchText: string = '';
+  p: number = 1;
 
   constructor(private authService: AuthService, private dialog: MatDialog) {}
 
@@ -23,6 +24,7 @@ export class UsuariosComponent implements OnInit {
     this.authService.getUsuarios().subscribe({
       next: (data) => {
         this.usuarios = data;
+        this.filteredUsuarios = [...this.usuarios];
         console.log('Usuarios cargados:', this.usuarios);
       },
       error: (err) => console.error('Error al cargar usuarios:', err)

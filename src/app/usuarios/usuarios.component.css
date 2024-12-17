@@ -79,7 +79,7 @@ app-menu {
     padding: 10px 15px;
     font-size: 1rem;
     font-weight: bold;
-    color: #fff;
+    color: #000000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -87,27 +87,27 @@ app-menu {
   }
   
   .botonDetalles {
-    background-color: #4CAF50;
+    background-color: #a3e3a5;
   }
   
   .botonDetalles:hover {
-    background-color: #45a049;
+    background-color: #7ee984;
   }
   
   .bontonEditar {
-    background-color: #ff9800;
+    background-color: #efcb95;
   }
   
   .bontonEditar:hover {
-    background-color: #e68900;
+    background-color: #f2c88a;
   }
   
   .botonEliminar {
-    background-color: #f44336;
+    background-color: #b5645f;
   }
   
   .botonEliminar:hover {
-    background-color: #e53935;
+    background-color: #f09e9d;
   }
   
   td img {
@@ -128,7 +128,7 @@ app-menu {
     padding: 10px 15px; /* Espaciado interno */
     font-size: 1rem;
     font-weight: bold;
-    color: #fff;
+    color: #0e0404;
     border: none;
     border-radius: 5px;
     cursor: pointer;

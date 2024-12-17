@@ -70,40 +70,25 @@ table tr:nth-child(even) {
   background-color: #c8cee5;
 }
 
-/* Botones */
-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 10px 15px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
 
 .botonDetalles {
-  background-color: #4CAF50;
+  background-color: #9bec9d;
 }
 
 .botonDetalles:hover {
-  background-color: #45a049;
+  background-color: #75e57a;
 }
 
 .bontonEditar {
-  background-color: #ff9800;
+  background-color: #d2af7b;
 }
 
 .bontonEditar:hover {
-  background-color: #e68900;
+  background-color: #dfad61;
 }
 
 .botonEliminar {
-  background-color: #f44336;
+  background-color: #df948f;
 }
 
 .botonEliminar:hover {
@@ -128,7 +113,7 @@ button {
   padding: 10px 15px; /* Espaciado interno */
   font-size: 1rem;
   font-weight: bold;
-  color: #fff;
+  color: #14092e;
   border: none;
   border-radius: 5px;
   cursor: pointer;
