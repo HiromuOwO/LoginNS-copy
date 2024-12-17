@@ -41,7 +41,11 @@ export class InicioComponent implements OnInit {
 
   openModal(nudi: any): void {
     this.dialog.open(DetallesComponent, {
+      width: '800px',
+      maxWidth: '100vw',
+      panelClass: 'custom-modal-container',
       data: nudi,
+      disableClose: false, // Permite cerrar el modal
     });
   }
 

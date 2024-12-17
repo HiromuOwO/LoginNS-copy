@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { User } from './models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class AuthService {
   private apiUrl = 'http://127.0.0.1:8000/api/usuarios/';  // URL de la API
   private currentUserSubject = new BehaviorSubject<any>(null);  // Usamos "any" para no depender de un modelo
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   // Iniciar sesión
   login(email: string, password: string): Observable<boolean> {
@@ -31,11 +32,7 @@ export class AuthService {
     );
   }
 
-  // Cerrar sesión
-  logout(): void {
-    localStorage.removeItem('currentUser');
-    this.currentUserSubject.next(null);  // Notificar que el usuario ha cerrado sesión
-  }
+
 
   // Verificar si el usuario está autenticado
   isAuthenticated(): boolean {
@@ -55,8 +52,36 @@ export class AuthService {
     return of(null);  // Si no hay usuario almacenado, devuelve null
   }
 
-  // Obtener el usuario actual de manera reactiva (si es necesario)
-  getCurrentUser(): Observable<any | null> {
-    return this.currentUserSubject.asObservable();
+
+
+getUsuarios(): Observable<User[]> {
+  return this.http.get<{ usuario: User[] }>(this.apiUrl).pipe(
+    map(response => response.usuario), // Simplemente retorna la lista sin transformación.
+    catchError(error => {
+      console.error('Error al obtener los usuarios:', error);
+      return of([]); // Devuelve un arreglo vacío en caso de error
+    })
+  );
+}
+
+
+  // Eliminar un usuario
+  deleteUsuario(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}${id}`).pipe(
+      catchError(error => {
+        console.error('Error al eliminar el usuario:', error);
+        return of(null);  // Devuelve null en caso de error
+      })
+    );
+  }
+
+  // Actualizar un usuario
+  updateUsuario(id: number, usuario: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}${id}`, usuario).pipe(
+      catchError(error => {
+        console.error('Error al actualizar el usuario:', error);
+        return of(null);  // Devuelve null en caso de error
+      })
+    );
   }
 }

@@ -1,0 +1,152 @@
+/* Navbar */
+app-menu {
+    width: 100%;
+    height: 60px;
+    background-color: #2c3e50; /* Color del navbar */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+  
+  /* Menú lateral */
+  app-menu-lateral {
+    position: fixed;
+    top: 60px; /* Debajo del navbar */
+    left: 0;
+    width: 220px;
+    height: calc(100% - 60px);
+    background-color: #34495e; /* Color del menú lateral */
+    color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 9;
+  }
+  
+  /* Contenedor principal */
+  .contenedorPrincipal {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .main-content {
+    margin-left: 220px; /* Ancho del menú lateral */
+    margin-top: 80px; /* Altura del navbar */
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  table {
+    width: 100%; /* La tabla ocupará todo el ancho del contenedor */
+    max-width: 100%; /* Evita que se desborde */
+    border: 1px solid rgb(7, 11, 223);
+    border-collapse: collapse;
+    padding: 5px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .tablaContenedor {
+    width: 90%; /* Ocupará el 90% del ancho de la pantalla */
+    margin: 50px auto; /* Centra el contenedor horizontalmente */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #0d4175;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  td, th {
+    padding: 15px; /* Mayor espaciado interno en las celdas */
+    font-size: 1.1rem; /* Aumenta el tamaño del texto */
+    text-align: center; /* Centra el texto en las celdas */
+  }
+  
+  table tr:nth-child(odd) {
+    background-color: #ceddea;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #c8cee5;
+  }
+  
+  /* Botones */
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .botonDetalles {
+    background-color: #4CAF50;
+  }
+  
+  .botonDetalles:hover {
+    background-color: #45a049;
+  }
+  
+  .bontonEditar {
+    background-color: #ff9800;
+  }
+  
+  .bontonEditar:hover {
+    background-color: #e68900;
+  }
+  
+  .botonEliminar {
+    background-color: #f44336;
+  }
+  
+  .botonEliminar:hover {
+    background-color: #e53935;
+  }
+  
+  td img {
+    width: 180px; /* Aumenta el tamaño de las imágenes */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 5px; /* Bordes ligeramente redondeados */
+  }
+  
+  h2 {
+    font-size: 2rem; /* Tamaño más grande para el título */
+    margin-bottom: 20px; /* Espaciado debajo del título */
+  }
+  
+  button {
+    display: flex;
+    align-items: center; /* Centra el icono y texto verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    padding: 10px 15px; /* Espaciado interno */
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: auto; /* Ajuste automático del ancho */
+    min-width: 120px; /* Ancho mínimo para que todos los botones tengan el mismo tamaño */
+  }
+  
+  .acciones {
+    text-align: center; /* Centra horizontalmente */
+    vertical-align: middle; /* Alinea verticalmente dentro de la celda */
+  }
+  
+  .acciones div {
+    display: flex; /* Activa Flexbox */
+    flex-direction: column; /* Apila los botones verticalmente */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    gap: 10px; /* Espacio entre los botones */
+  }
+  
