@@ -14,6 +14,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { DetallesComponent } from './detalles/detalles.component';
 import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
     BuscadorComponent,
     MenuComponent,
     DetallesComponent,
-    MenuLateralComponent
+    MenuLateralComponent,
+    UsuariosComponent
   ],
   imports: [
     BrowserModule,
