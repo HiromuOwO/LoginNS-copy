@@ -1,21 +1,17 @@
 .login-container {
-  max-width: 400px;
+  max-width: 800px;
   margin: 100px auto;
   padding: 40px;
   border: 1px solid #020304;
   border-radius: 10px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
-  background-color: #d1e6e6;
+  background-color: #a3b5b5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
-
-.login-container label {
-  font-size: 1.5rem;
-  color: #555;
-  display: block;
-  margin-top: 15px;
-}
-
 .login-container input[type="text"],
 .login-container input[type="password"] {
   width: 90%;
@@ -85,3 +81,52 @@
 .error-popup button:hover {
   background-color: #d37c7c;
 }
+
+.image-section {
+  width: 300px; /* Ancho fijo del contenedor */
+  height: 200px; /* Altura fija del contenedor */
+  overflow: hidden; /* Oculta las partes que sobresalgan */
+}
+
+.nudi {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta la imagen cubriendo todo el contenedor */
+}
+
+
+/* Contenedor principal: flexbox para alinear la imagen y formulario */
+.login-container {
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente si es necesario */
+  gap: 20px; /* Espacio entre la imagen y el formulario */
+  max-width: 800px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centrar en la página */
+}
+
+/* Sección de la imagen */
+.image-section img {
+  width: 300px; /* Ancho fijo para la imagen */
+  height: auto; /* Mantiene la proporción */
+  border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Sección del formulario */
+.form-section {
+  flex: 1; /* Toma el espacio restante */
+  max-width: 400px; /* Limita el ancho del formulario */
+}
+
+/* Estilo adicional para responsividad */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column; /* Cambia a vertical en pantallas pequeñas */
+  }
+
+  .image-section img {
+    width: 100%; /* Imagen ocupa todo el ancho en pantallas pequeñas */
+  }
+}
+
+

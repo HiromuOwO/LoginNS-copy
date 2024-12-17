@@ -48,21 +48,47 @@ export class InicioComponent implements OnInit {
   borrarNudi(nudiId: number): void {
     const confirmDelete = confirm('¿Estás seguro de que deseas eliminar este nudi?');
     if (confirmDelete) {
-      this.filteredNudis = this.filteredNudis.filter((nudi) => nudi.id !== nudiId);
-      alert('Nudi eliminado exitosamente.');
+      this.characterService.deleteNudi(nudiId).subscribe(
+        () => {
+          this.filteredNudis = this.filteredNudis.filter((nudi) => nudi.id !== nudiId);
+          alert('Nudi eliminado exitosamente.');
+        },
+        (error) => {
+          console.error('Error al eliminar el nudi:', error);
+          alert('Error al eliminar el nudi.');
+        }
+      );
     }
   }
 
   actualizarNudi(nudi: any): void {
     const updatedNombre = prompt('Actualizar nombre:', nudi.nombre);
-    const updatedEspecie = prompt('Actualizar especie:', nudi.especie);
     const updatedTamano = prompt('Actualizar tamaño:', nudi.tamano);
-
-    if (updatedNombre && updatedEspecie && updatedTamano) {
-      nudi.nombre = updatedNombre;
-      nudi.especie = updatedEspecie;
-      nudi.tamano = updatedTamano;
-      alert('Nudi actualizado exitosamente.');
+    const updatedSociabilidad = prompt('Actualizar sociabilidad:', nudi.sociabilidad);
+    const updatedDieta = prompt('Actualizar dieta:', nudi.dieta);
+  
+    if (updatedNombre && updatedTamano && updatedSociabilidad && updatedDieta) {
+      const updatedNudi = {
+        ...nudi, // Mantén los otros campos
+        nombre: updatedNombre,
+        tamano: updatedTamano,
+        sociabilidad: updatedSociabilidad,
+        dieta: updatedDieta,
+      };
+  
+      this.characterService.updateNudi(nudi.id, updatedNudi).subscribe(
+        (response) => {
+          const index = this.filteredNudis.findIndex((item) => item.id === nudi.id);
+          if (index !== -1) {
+            this.filteredNudis[index] = response; // Actualiza localmente
+          }
+          alert('Nudi actualizado exitosamente.');
+        },
+        (error) => {
+          console.error('Error al actualizar el nudi:', error);
+          alert('Error al actualizar el nudi.');
+        }
+      );
     }
   }
 }

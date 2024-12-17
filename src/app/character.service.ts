@@ -26,4 +26,35 @@ export class CharacterService {
       })
     );
   }
+
+  // Eliminar un nudi por ID
+  deleteNudi(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}${id}/`).pipe(
+      catchError((error) => {
+        console.error(`Error al eliminar el nudi con ID ${id}:`, error);
+        return of(); // No devolver nada en caso de error
+      })
+    );
+  }
+
+  // Actualizar un nudi
+  updateNudi(id: number, updatedNudi: any): Observable<any> {
+    // Renombrar "tamano" a "tamaño" antes de enviar los datos
+    const formattedNudi = {
+      ...updatedNudi,
+      tamaño: updatedNudi.tamano,
+    };
+    delete formattedNudi.tamano;
+
+    return this.http.put<any>(`${this.apiUrl}${id}/`, formattedNudi).pipe(
+      map((response) => ({
+        ...response,
+        tamano: response['tamaño'], // Renombrar "tamaño" a "tamano" al recibir la respuesta
+      })),
+      catchError((error) => {
+        console.error(`Error al actualizar el nudi con ID ${id}:`, error);
+        return of(null); // Devolver null en caso de error
+      })
+    );
+  }
 }

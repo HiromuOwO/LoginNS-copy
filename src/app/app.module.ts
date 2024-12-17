@@ -13,6 +13,7 @@ import { MenuComponent } from './menu/menu.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { DetallesComponent } from './detalles/detalles.component';
+import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DetallesComponent } from './detalles/detalles.component';
     InicioComponent,
     BuscadorComponent,
     MenuComponent,
-    DetallesComponent
+    DetallesComponent,
+    MenuLateralComponent
   ],
   imports: [
     BrowserModule,
