@@ -1,4 +1,4 @@
-## Equipo 18     Lopez Garcia Lourdes Glorian    Perez de Jesus Edith
+## Equipo 18  -----   Lopez Garcia Lourdes Gloria ----    Perez de Jesus Edith
 
 # Proyecto que consume dos APIS
 
