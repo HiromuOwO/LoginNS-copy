@@ -1,3 +1,5 @@
+## Equipo 18     Lopez Garcia Lourdes Glorian    Perez de Jesus Edith
+
 # Proyecto que consume dos APIS
 
 El login solicitara al usuario ingresar un correo electronico y contraseña, estos datos seran validados usando una API creada en Laravel. 
